@@ -1,0 +1,112 @@
+{
+  "states": [
+    {
+      "name": "Neutral",
+      "value": "Hola, jugador. ¿Quiere escuchar acerca del 'objetivo'?",
+      "next_states": [
+        {
+          "name": "Pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.4, -0.26]
+            }
+          ]
+        },
+        {
+          "name": "Very pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-1.1, -0.5]
+            }
+          ]
+        },
+        {
+          "name": "Cooperative",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.25, 1.1]
+            },
+            {
+              "name": "entities",
+              "type": "contains",
+              "value": "objetivo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pissed",
+      "value": "No me gusta su tono, jugador",
+      "next_states": [
+        {
+          "name": "Very pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-1.1, -0.24]
+            }
+          ]
+        },
+        {
+          "name": "Cooperative",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.26, 1.1]
+            },
+            {
+              "name": "entities",
+              "type": "contains",
+              "value": "objetivo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Very pissed",
+      "value": "No pienso decir nada si me habla así.",
+      "next_states": [
+        {
+          "name": "Pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.1, 0.26]
+            }
+          ]
+        },
+        {
+          "name": "Cooperative",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [0.25, 1.1]
+            },
+            {
+              "name": "entities",
+              "type": "contains",
+              "value": "objetivo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cooperative",
+      "value": "El objetivo era comprobar las diferentes respuestas del NPC y obtener información del mismo.",
+      "next_states": []
+    }
+  ]
+}
