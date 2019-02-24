@@ -31,6 +31,6 @@ If you want to develop and test your own NPC, you could create a new json file a
 ## Functionality
 
 The current implementation of MyNPC updates its state based of the entities mentioned and the sentiment (with a 10% variation) of the user input.
-[State list](images/MyNPC_state_machine.png)
+![State list](images/MyNPC_state_machine.png)
 
 The class also includes unused functions such as attack or bribe to demonstrate that there are other possible actions to trigger a different state. Also reaction could be modified to include more possible actions of the NPC such as fighting or running away. The use of randomize and penalize are in order to include randime¡ness and unexpected results into the equation.
