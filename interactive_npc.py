@@ -18,13 +18,18 @@ class Condition:
     def is_met(self, input):
         if self.condition_type == 'contains':
             return self.value in input
+        elif self.condition_type == 'contains_not':
+            return self.value not in input
         elif self.condition_type == 'threshold':
             return self.value[0] < input < self.value[1]
         elif self.condition_type == 'equals':
             return self.value == input
-        elif self.condition_type == 'differs':
+        elif self.condition_type == 'equals_not':
             return self.value != input
-
+        elif self.condition_type == 'greater':
+            return input > self.value
+        elif self.condition_type == 'lesser':
+            return input < self.value
         else:
             return False
 

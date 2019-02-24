@@ -28,6 +28,9 @@ class MyNPC(NPCStateMachine):
         }
         self._get_next_state(inputs)
 
+    def react(self):
+        print('NPC:', self.current_state.value)
+
     @classmethod
     def create_from_dict(cls, dict: dict):
         my_npc = MyNPC()
@@ -41,8 +44,8 @@ if __name__ == "__main__":
     npc_dict = json.load(f)
     npc =MyNPC.create_from_dict(npc_dict)
     f.close()
-    print('NPC:', npc.current_state.value)
+    npc.react()
     while(not npc.is_last_state()):
         user_input = input('Tu: ')
         npc.tell(user_input)
-        print('NPC:', npc.current_state.value)
+        npc.react()
