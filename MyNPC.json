@@ -5,6 +5,118 @@
       "value": "Hola, jugador. ¿Quiere escuchar acerca del 'objetivo'?",
       "next_states": [
         {
+          "name": "Confused",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.25, 1.11]
+            },
+            {
+              "name": "entities",
+              "type": "contains_not",
+              "value": "objetivo"
+            }
+          ]
+        },
+        {
+          "name": "Pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.4, -0.26]
+            }
+          ]
+        },
+        {
+          "name": "Very pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-1.1, -0.5]
+            }
+          ]
+        },
+        {
+          "name": "Cooperative",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.25, 1.1]
+            },
+            {
+              "name": "entities",
+              "type": "contains",
+              "value": "objetivo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Confused",
+      "value": "Me temo que no entiendo.",
+      "next_states": [
+        {
+          "name": "Still confused",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.25, 1.11]
+            },
+            {
+              "name": "entities",
+              "type": "contains_not",
+              "value": "objetivo"
+            }
+          ]
+        },
+        {
+          "name": "Pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.4, -0.26]
+            }
+          ]
+        },
+        {
+          "name": "Very pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-1.1, -0.5]
+            }
+          ]
+        },
+        {
+          "name": "Cooperative",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.25, 1.1]
+            },
+            {
+              "name": "entities",
+              "type": "contains",
+              "value": "objetivo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Still confused",
+      "value": "Me temo que sigo sin entiender.",
+      "next_states": [
+        {
           "name": "Pissed",
           "conditions": [
             {
@@ -46,12 +158,37 @@
       "value": "No me gusta su tono, jugador",
       "next_states": [
         {
+          "name": "Still pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.6, -0.25]
+            }
+          ]
+        },
+        {
           "name": "Very pissed",
           "conditions": [
             {
               "name": "sentiment",
               "type": "threshold",
-              "value": [-1.1, -0.24]
+              "value": [-1.1, -0.5]
+            }
+          ]
+        },
+        {
+          "name": "Not pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.26, 1.1]
+            },
+            {
+              "name": "entities",
+              "type": "contains_not",
+              "value": "objetivo"
             }
           ]
         },
@@ -73,16 +210,31 @@
       ]
     },
     {
-      "name": "Very pissed",
-      "value": "No pienso decir nada si me habla así.",
+      "name": "Still pissed",
+      "value": "Sigue sin gustarme su tono.",
       "next_states": [
         {
-          "name": "Pissed",
+          "name": "Very pissed",
           "conditions": [
             {
               "name": "sentiment",
               "type": "threshold",
-              "value": [-0.1, 0.26]
+              "value": [-1.1, -0.5]
+            }
+          ]
+        },
+        {
+          "name": "Not pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.26, 1.1]
+            },
+            {
+              "name": "entities",
+              "type": "contains_not",
+              "value": "objetivo"
             }
           ]
         },
@@ -92,12 +244,110 @@
             {
               "name": "sentiment",
               "type": "threshold",
-              "value": [0.25, 1.1]
+              "value": [-0.26, 1.1]
             },
             {
               "name": "entities",
               "type": "contains",
               "value": "objetivo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Not pissed",
+      "value": "¡Hm! Está bien.",
+      "next_states": [
+        {
+          "name": "Confused",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.25, 1.11]
+            },
+            {
+              "name": "entities",
+              "type": "contains_not",
+              "value": "objetivo"
+            }
+          ]
+        },
+        {
+          "name": "Pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.4, -0.26]
+            }
+          ]
+        },
+        {
+          "name": "Very pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-1.1, -0.5]
+            }
+          ]
+        },
+        {
+          "name": "Cooperative",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.25, 1.1]
+            },
+            {
+              "name": "entities",
+              "type": "contains",
+              "value": "objetivo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Very pissed",
+      "value": "Me está empezando a sacar de quicio.",
+      "next_states": [
+        {
+          "name": "Still pissed",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-0.1, 0.26]
+            }
+          ]
+        },
+        {
+          "name": "Tired",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-1.1, 0]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tired",
+      "value": "Suficiente, acabemos con esto de una vez.",
+      "next_states": [
+        {
+          "name": "Cooperative",
+          "conditions": [
+            {
+              "name": "sentiment",
+              "type": "threshold",
+              "value": [-1.1, 1.1]
             }
           ]
         }
