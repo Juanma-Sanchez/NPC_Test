@@ -5,22 +5,23 @@ This project is a test on appliying the generative AI Google Gemini to implement
 ## Installation
 
 In order to use this project, clone the code from the github repository and install the dependencies:
-´´´
+```
 pip install -r requirements.txt
-´´´
+```
 
-Then add your API key to the local_settings.py file
-´´´
-echo GEMINI_API_KEY = "\<your key\>" \> local_settings.py 
+Generate a [Gemini API key](https://ai.google.dev/gemini-api/docs/api-key) if you don't have one. Then add your API key to the local_settings.py file
+```
+echo GEMINI_API_KEY = "<your_key>" > local_settings.py 
+```
 
 ## Usage
 
 You can update the settings file or overwrite them by including them in local_settings.py.
 
 Once you are done, you can test the code by executing the main file:
-´´´
+```
 python main.py
-´´´
+```
 
 ## Classes
 

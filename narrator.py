@@ -26,7 +26,12 @@ class Narrator:
                     self.selected_npc.give_item(output['item'])
                     player.obtain(output['item'])
                 if not output['keep_talking']:
-                    print('Narrador:', self.selected_npc.name.capitalize(), 'ya no quiere hablar contigo')
+                    print(
+                        'Narrador: {} {} ya no quiere hablar contigo'.format(
+                            'el' if self.selected_npc.gender == 'M' else 'la',
+                            self.selected_npc.name
+                        )
+                    )
                     self.npc_list.unselect_npc()
             else:
                 print(

@@ -5,7 +5,7 @@ import json
 import random
 from google import genai
 from google.genai import types
-from settings import GEMINI_API_KEY
+from settings import GEMINI_API_KEY, ITEM_LIST
 from player import Player
 
 class NPC:
@@ -28,8 +28,6 @@ class NPC:
     def background(self, player:Player):
         full_background = [
             'Eres un personaje no jugable de un videjuego.',
-            'Tu interlocutor es un joven purificador armado con una espada.'
-            'Sólo puedes entregar objetos con exactamente el mismo nombre de los que estén en tu posesión (sin traducir).'
             'Eres un hombre.' if self.gender == 'M' else 'Eres una mujer.' 
         ] + self._background + [
             'Posees un objeto llamado {}. No quieres entregarlo a cualquiera, pero estarías dispuesto a darlo a quién lo necesite, lo merezca o para quitarte a alguien de encima.'.format(
@@ -84,6 +82,8 @@ class NPC:
     
     def talk(self, player, text:str):
         self.context.append(text)
+        if len(self.context) > 100:
+            self.context = self.context[2:]
         model = "gemini-2.5-flash-preview-04-17"
         contents = [
             types.Content(
@@ -107,6 +107,7 @@ class NPC:
                     ),
                     "item": genai.types.Schema(
                         type = genai.types.Type.STRING,
+                        enum = ITEM_LIST
                     ),
                 },
             ),

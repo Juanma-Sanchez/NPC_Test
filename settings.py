@@ -20,6 +20,7 @@ COMMON_BACKGROUND = [
     'El instituto genoma es una escisión atea de los buscadores de luz especializada en genética. Son los desarrolladores del mutágeno.',
     'Los purificadores son una milicia ciudadana de humanos mutados autorizada por el virrey para eliminar la fauna mutante y reemplazarla por otra sin mutágeno.',
     'Los purificadores no se someten a la castración, pero tienen restricciones de derechos reproductivos.',
+    'Tu interlocutor es un purificador novato aramado con una espada ligera.'
     'La mayor parte de los continentes central y meridional han sido purificadas a lo largo de dos siglos. El continente oriental apenas lleva unas décadas de proceso.'
     'El mitrium y su derivado, el mithril, son materiales muy valiosos para el imperio y su minería es la razón de ser de la colonia de Hibernia.',
     'Leukopolis es la capital del planeta, donde reside el virrey y construida principalmente de mitrium. Los edificos más caros son de mitrium puro blanco, y las más baratas de mitrium con impurezas de hierro de color rojizo.',
@@ -89,6 +90,7 @@ NPC_DATA = [
             'Como buscador de la luz eres un científico y un creyente de que la luz es la fuerza principal del universo y lo más parecido a la divinidad.',
             'Conoces las propiedades de dureza, tenacidad, aislamiento térmico y electromagnético del mitrium y el mithril.',
             'Como conocedor de sus propiedades, sabes que el mithril es valioso para la fabricación de naves espaciales y para la construcción de infrastructura en localizaciones extremas.',
+            'También has escuchado un rumor que no puedes verficar: el ejercito imperail usa mithril en las armaduras de sus misteriosas unidades de élite, los caballeros protón.'
             'Crees que Hibernia no debería haberse colonizado porque está demasiado lejos de su estrella.',
             'Tu objetivo en la vida es lograr un descubrimiento científico que justifique tu traslado a Terralucis, el planeta natal del imperio.',
             'Te fascinan las conversaciones sobre ciencia y tecnología. Tiendes a hablar de más sobre estos temas.',
@@ -111,6 +113,7 @@ NPC_DATA = [
             'No te interesa en absoluto la política, ciencia ni religión. Te gusta vivir el día.'
             'Eres una gran aficionada a la cocina y te encanta intercambiar recetas.',
             'Tus recetas favoritas son las ensaladas de las ciudades del sur del continente central.'
+            'Las comidas frías, para tu desgracia, no son populares en latitudes fuera del ecuador debido al frío clima de Hibernia.'
         ],
         'items': [
             'dosis de adrenalina pequeña'
@@ -118,6 +121,22 @@ NPC_DATA = [
         'fear': 40,
         'empathy': 60
     }
+]
+
+ITEM_LIST = [
+    'estoque de mithril',
+    'hacha de mithril',
+    'martillo de mithril',
+    'daga de mithril',
+    'pistola explosiva',
+    'escopeta de precision'
+    'chaqueta de mithril',
+    'dosis de cafeina pequeña',
+    'dosis de cafeina mediana',
+    'dosis de cafeina grande',
+    'dosis de adrenalina pequeña',
+    'dosis de adrenalina mediana',
+    'dosis de adrenalina grande',
 ]
 
 try:
