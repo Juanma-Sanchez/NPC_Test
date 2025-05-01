@@ -5,7 +5,7 @@ import json
 import random
 from google import genai
 from google.genai import types
-from settings import GEMINI_API_KEY, ITEM_LIST
+from settings import GEMINI_API_KEY
 from player import Player
 
 class NPC:
@@ -107,7 +107,7 @@ class NPC:
                     ),
                     "item": genai.types.Schema(
                         type = genai.types.Type.STRING,
-                        enum = ITEM_LIST
+                        enum = self.items
                     ),
                 },
             ),

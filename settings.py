@@ -123,22 +123,6 @@ NPC_DATA = [
     }
 ]
 
-ITEM_LIST = [
-    'estoque de mithril',
-    'hacha de mithril',
-    'martillo de mithril',
-    'daga de mithril',
-    'pistola explosiva',
-    'escopeta de precision'
-    'chaqueta de mithril',
-    'dosis de cafeina pequeña',
-    'dosis de cafeina mediana',
-    'dosis de cafeina grande',
-    'dosis de adrenalina pequeña',
-    'dosis de adrenalina mediana',
-    'dosis de adrenalina grande',
-]
-
 try:
     from local_settings import *
 except:
