@@ -39,7 +39,7 @@ class NPC:
                 'Tu interlocutor no te intimida cuando habla de forma agresiva-'
             ]
         else:
-            roll = player.stregnth * self.multiplier(player.luck)
+            roll = player.strength * self.multiplier(player.luck)
             if roll > self.fear:
                 full_background += [
                     'Tu interlocutor te intimida mucho cuando habla de forma agresiva.'
@@ -61,16 +61,16 @@ class NPC:
                 'Tu interlocutor no te provoca empatía cuando habla de forma sosegada.'
             ]
         else:
-            roll = player.stregnth * self.multiplier(player.luck)
-            if roll > self.fear:
+            roll = player.intelligence * self.multiplier(player.luck)
+            if roll > self.empathy:
                 full_background += [
                     'Tu interlocutor te provoca mucha empatía cuando habla de forma sosegada.'
                 ]
-            elif roll > self.fear*0.75:
+            elif roll > self.empathy*0.75:
                 full_background += [
                     'Tu interlocutor te provoca bastante empatía cuando habla de forma sosegada.'
                 ]
-            elif roll > self.fear*0.5:
+            elif roll > self.empathy*0.5:
                 full_background += [
                     'Tu interlocutor te provoca un poco de empatía cuando habla de forma sosegada.'
                 ]
@@ -84,7 +84,7 @@ class NPC:
         self.context.append(text)
         if len(self.context) > 100:
             self.context = self.context[2:]
-        model = "gemini-2.5-flash"
+        model = "gemini-3.1-flash-lite"
         contents = [
             types.Content(
                 role="model" if i % 2 else "user",

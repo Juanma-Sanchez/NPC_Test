@@ -1,6 +1,6 @@
 class Player:
     def __init__(self, strength:int, constitution:int, intelligence:int, agility:int, luck:int):
-        self.stregnth = strength
+        self.strength = strength
         self.constitution = constitution
         self.intelligence = intelligence
         self.agility = agility
